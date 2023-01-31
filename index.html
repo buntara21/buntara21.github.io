@@ -19,6 +19,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
+
+    <!--AOS-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@next/dist/aos.css"
+    />
+
     <!--My CSS-->
     <link
       rel="stylesheet"
@@ -96,7 +103,7 @@
         class="rounded img-thumbnail"
       />
       <h1 class="display-4">Ahmad Rio Ramadhani</h1>
-      <p class="lead">Sometimes I just want to give it all up and become a handsome billionaire.</p>
+      <p class="lead"></p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
@@ -118,10 +125,19 @@
           </div>
         </div>
         <div class="row justify-content-center fs-8 text-center">
-          <div class="col-md-5">
+          <div
+            class="col-md-5"
+            data-aos="zoom-in-right"
+            data-aos-duration="1000"
+          >
             <p>Nama saya Ahmad Rio Ramadhani, berasal dari Bekasi, saya adalah seorang pelajar di sebuah pergutuan tinggi di daerah Yogyakarta.</p>
           </div>
-          <div class="col-md-5">
+          <div
+            class="col-md-5"
+            data-aos="zoom-in-left"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+          >
             Ingin menjadi orang lain adalah menyia-nyiakan dirimu sebenarnya. setiap individu diciptakan berbeda dan memiliki keunikan masing-masing. jika berpura-pura menjadi orang lain, maka kamu telah menyia-nyiakan keunikan dari
             kepribadianmu sendiri. kurt cobain.
           </div>
@@ -149,7 +165,11 @@
         </div>
         <div class="row">
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div
+              class="card"
+              data-aos="zoom-out-down"
+              data-aos-duration="1000"
+            >
               <img
                 src="img/dominic.jpg"
                 class="card-img-top"
@@ -161,7 +181,11 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div
+              class="card"
+              data-aos="zoom-out-down"
+              data-aos-duration="1000"
+            >
               <img
                 src="img/gunung.jpg"
                 class="card-img-top"
@@ -173,7 +197,11 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div
+              class="card"
+              data-aos="zoom-out-down"
+              data-aos-duration="1000"
+            >
               <img
                 src="img/pare.jpg"
                 class="card-img-top"
@@ -199,6 +227,55 @@
       </svg>
     </section>
     <!--Akhir Projects-->
+    <!--Galeri-->
+    <section id="gallery">
+      <div class="container">
+        <div class="row">
+          <div class="row text-center mb-3">
+            <div class="col">
+              <h2>Gallery</h2>
+            </div>
+          </div>
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/1.jpg" alt="Gambar 1" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/2.jpg" alt="Gambar 2" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/3.jpg" alt="Gambar 3" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/4.jpg" alt="Gambar 4" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/5.jpg" alt="Gambar 5" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/6.jpg" alt="Gambar 6" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/7.jpg" alt="Gambar 7" class="img-fluid gallery-img" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Akhir Galeri-->
 
     <!--Akhir Contact-->
     <section id="contact">
@@ -335,6 +412,28 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+const galleryImage = document.querySelectorAll('.gallery-img');
+
+galleryImage.forEach((img, i) => {
+  img.dataset.aos = 'zoom-in-down';
+  img.dataset.aosDuration = 1000;
+})
+
+      AOS.init();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.lead', { duration: 4, delay: 1.5, text: 'Sometimes I just want to give it all up and become a handsome billionaire.'})
+      gsap.from('.jumbotron img', { duration: 1, y: -100, opacity: 0, ease: 'bounce' });
+      gsap.from('.navbar', { duration: 1.5, y: '-100%', opacity: 0, ease: 'elastic'});
+      gsap.from('.display-4', { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: 'back' });
+    </script>
+
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwj_7-D4N2_lQyoIVDBwRtiN8p8AGBAqy1V0GdHg7M3YHXKQCal1qmEgWsfi2KsvL8AGQ/exec';
       const form = document.forms['contact-form'];
